@@ -26,17 +26,14 @@ WebMidi.enable(function (err) {
   } else {
 	console.log("WebMidi enabled!");
 
-    // Tacky jQuery is tacky
-    $("div#0").click(function() { sampleIndex = 0;});
-    $("div#1").click(function() { sampleIndex = 1;});
-    $("div#2").click(function() { sampleIndex = 2;});
-    $("div#3").click(function() { sampleIndex = 3;});
-    $("div#4").click(function() { sampleIndex = 4;});
-    $("div#5").click(function() { sampleIndex = 5;});
-
+    $("div.btn").click(function() {
+        $("div.btn").removeClass("btn-danger");
+        $(this).addClass("btn-danger");
+        sampleIndex = parseInt($(this).attr('id'));
+        currentSampler = createNewSampler(samplePaths, sampleIndex);
+    });
 
     currentSampler = createNewSampler(samplePaths, sampleIndex);
-	// var input = WebMidi.inputs[0];
     var input = WebMidi.getInputByName("LPK25");
 
 	console.log(input);
