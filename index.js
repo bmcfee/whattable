@@ -26,6 +26,11 @@ WebMidi.enable(function (err) {
   } else {
 	console.log("WebMidi enabled!");
 
+    $("#1").click(function() {
+      alert("Handler for .click() called.");
+    });
+
+
     currentSampler = createNewSampler(samplePaths, sampleIndex);
 	// var input = WebMidi.inputs[0];
     var input = WebMidi.getInputByName("LPK25");
