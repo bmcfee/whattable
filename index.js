@@ -26,9 +26,13 @@ WebMidi.enable(function (err) {
   } else {
 	console.log("WebMidi enabled!");
 
-    $("#1").click(function() {
-      alert("Handler for .click() called.");
-    });
+    // Tacky jQuery is tacky
+    $("div#0").click(function() { sampleIndex = 0;});
+    $("div#1").click(function() { sampleIndex = 1;});
+    $("div#2").click(function() { sampleIndex = 2;});
+    $("div#3").click(function() { sampleIndex = 3;});
+    $("div#4").click(function() { sampleIndex = 4;});
+    $("div#5").click(function() { sampleIndex = 5;});
 
 
     currentSampler = createNewSampler(samplePaths, sampleIndex);
