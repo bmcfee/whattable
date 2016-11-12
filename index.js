@@ -28,7 +28,7 @@ WebMidi.enable(function (err) {
 
     currentSampler = createNewSampler(samplePaths, sampleIndex);
 	// var input = WebMidi.inputs[0];
-    var input = WebMidi.getInputById("1751963343");
+    var input = WebMidi.getInputByName("LPK25");
 
 	console.log(input);
 	console.log(input.state);
