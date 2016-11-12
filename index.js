@@ -26,11 +26,6 @@ WebMidi.enable(function (err) {
   } else {
 	console.log("WebMidi enabled!");
 
-    // Can we just put jQuery here?
-    $("#1").click(function() {
-        console.log("one!");
-    });
-
     currentSampler = createNewSampler(samplePaths, sampleIndex);
 	// var input = WebMidi.inputs[0];
     var input = WebMidi.getInputById("1751963343");
