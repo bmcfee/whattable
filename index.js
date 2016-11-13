@@ -20,18 +20,22 @@ var createNewSampler = function(samplePaths, sampleIndex) {
   return currentSampler;
 }
 
+$(document).ready(function() {
+    $("div.btn").click(function() {
+        $("div.btn").removeClass("btn-danger");
+        $(this).addClass("btn-danger");
+        sampleIndex = parseInt($(this).attr('id'));
+        console.log(sampleIndex);
+        currentSampler = createNewSampler(samplePaths, sampleIndex);
+    });
+});
+
 WebMidi.enable(function (err) {
   if (err) {
 	console.log("WebMidi could not be enabled.", err);
   } else {
 	console.log("WebMidi enabled!");
 
-    $("div.btn").click(function() {
-        $("div.btn").removeClass("btn-danger");
-        $(this).addClass("btn-danger");
-        sampleIndex = parseInt($(this).attr('id'));
-        currentSampler = createNewSampler(samplePaths, sampleIndex);
-    });
 
     currentSampler = createNewSampler(samplePaths, sampleIndex);
     var input = WebMidi.getInputByName("LPK25");
